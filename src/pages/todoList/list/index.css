@@ -1,0 +1,15 @@
+.list {
+    text-align: center;
+    margin-top: 50px;
+}
+.list-item {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+}
+.list-item p {
+    width: 500px;
+}
+.list-item button {
+    margin-left: 20px;
+}

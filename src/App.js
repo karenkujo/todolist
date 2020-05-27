@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import LodoList from './pages/todoList'
+import LodoList from '@/pages/todoList'
 
 function App() {
   return (
