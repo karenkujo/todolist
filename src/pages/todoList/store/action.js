@@ -11,6 +11,10 @@ import store from '@/store';
 
 const { getState } = store;
 
+
+/*获取初始todoList
+ *@method getTodoList
+ */
 export const getTodoList = () => {
     return (dispatch) => {
         axios.get('/todoList.json').then((res) => {
@@ -27,6 +31,11 @@ export const getTodoList = () => {
     };
 };
 
+/*添加一条数据到todoList
+ *@method addToTodoList
+ *@param {String}}query 需要添加的数据
+ *@return {Object} action需要提交的数据
+ */
 export const addToTodoList = (query) => {
     let todoList = getState().todoListReducer.todoList.slice(0);
     if (query === '') {
@@ -42,6 +51,11 @@ export const addToTodoList = (query) => {
     };
 };
 
+/*从todoList删除一条数据
+ *@method deleteItem
+ *@param {Number}}index 需要删除的数据的索引
+ *@return {Object} action需要提交的数据
+ */
 export const deleteItem = (index) => {
     let todoList = getState().todoListReducer.todoList.slice(0);
     todoList.splice(index, 1);
@@ -51,6 +65,11 @@ export const deleteItem = (index) => {
     };
 };
 
+/*从todoList更改某条数据
+ *@method changeItem
+ *@param {Number}}index 需要更改的数据的索引
+ *@return {Object} action需要提交的数据
+ */
 export const changeItem = (index) => {
     const showDialog = true;
     const activeIndex = index;
@@ -61,6 +80,11 @@ export const changeItem = (index) => {
     };
 };
 
+/*确认更改数据
+ *@method ensureChange
+ *@param {String}}query 更改后数据的内容
+ *@return {Object} action需要提交的数据
+ */
 export const ensureChange = (query) => {
     let todoList = getState().todoListReducer.todoList.slice(0);
     const activeIndex = getState().todoListReducer.activeIndex;
@@ -77,6 +101,10 @@ export const ensureChange = (query) => {
     };
 };
 
+/*取消更改数据
+ *@method onCancel
+ *@return {Object} action需要提交的数据
+ */
 export const onCancel = () => {
     const showDialog = false;
     return {
