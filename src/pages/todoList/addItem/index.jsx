@@ -6,22 +6,22 @@ import * as action from '@/pages/todoList/store/action';
 
 class AddItem extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
-            query: ''
-        }
+            query: '',
+        };
     }
     handleChange = (e) => {
         this.setState({
-            query: e.target.value
-        })
-    }
+            query: e.target.value,
+        });
+    };
     render() {
-        const { query } = this.state
-        const { addToTodoList } = this.props
+        const { query } = this.state;
+        const { addToTodoList } = this.props;
         return (
-            <div>
-                <input onChange={this.handleChange} type="text"/>
+            <div className="add-wrapper">
+                <input onChange={this.handleChange} type="text" />
                 <button onClick={addToTodoList.bind(null, query)}>添加</button>
             </div>
         );
@@ -29,7 +29,7 @@ class AddItem extends Component {
 }
 
 const mapDispatch = (dispatch) => {
-    return bindActionCreators(action, dispatch)
-}
+    return bindActionCreators(action, dispatch);
+};
 
 export default connect(null, mapDispatch)(AddItem);

@@ -1,15 +1,28 @@
 .list {
-    text-align: center;
     margin-top: 50px;
 }
 .list-item {
     width: 50%;
     display: flex;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
-.list-item p {
+.list-item div {
     width: 500px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 32px;
 }
 .list-item button {
     margin-left: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.7);
+    outline: none;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.list-item button:active {
+    color: rgb(0, 0, 0);
+    border: 1px solid #000;
 }

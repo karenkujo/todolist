@@ -8,12 +8,16 @@ class List extends Component {
     render() {
         const { todoList, deleteItem, changeItem } = this.props;
         return (
-            <div className='list'>
+            <div className="list">
                 {todoList.map((item, index) => (
-                    <div className='list-item' key={index}>
-                        <p>{item}</p>
-                        <button onClick={changeItem.bind(null, index)}>修改</button>
-                        <button onClick={deleteItem.bind(null ,index)}>删除</button>
+                    <div className="list-item" key={index}>
+                        <div>{item}</div>
+                        <button onClick={changeItem.bind(null, index)}>
+                            修改
+                        </button>
+                        <button onClick={deleteItem.bind(null, index)}>
+                            删除
+                        </button>
                     </div>
                 ))}
             </div>

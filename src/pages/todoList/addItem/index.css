@@ -1,0 +1,26 @@
+.add-wrapper {
+    overflow: hidden;
+    margin-top: 50px;
+    margin-right: 100px;
+}
+.add-wrapper input {
+    border: 1px solid rgb(228, 228, 228);
+    height: 26px;
+    width: 340px;
+    outline: none;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    padding-left: 10px;
+}
+.add-wrapper button {
+    border: none;
+    background-color: #1785ff;
+    color: #fff;
+    outline: none;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 15px;
+}
+.add-wrapper button:active {
+    background-color: #0077ff;
+}

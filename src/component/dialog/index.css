@@ -1,0 +1,62 @@
+.dialog-wrapper {
+    width: 360px;
+    height: 200px;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 5px;
+}
+.dialog-wrapper input {
+    display: block;
+    border: 1px solid rgb(228, 228, 228);
+    height: 26px;
+    width: 200px;
+    outline: none;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    padding-left: 10px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.dialog-wrapper button {
+    border: none;
+    background-color: #348cf0;
+    color: #fff;
+    outline: none;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 15px;
+    margin: 0 30px;
+}
+.dialog-wrapper button:nth-child(3) {
+    border: none;
+    background-color: #fff;
+    color: rgb(150, 150, 150);
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 15px;
+    margin: 0 30px;
+}
+.dialog-wrapper button:nth-child(2):active {
+    background-color: #0077ff;
+}
+.dialog-wrapper button:nth-child(3):active {
+    color: rgb(0, 0, 0);
+    border: 1px solid #000;
+}
+.mask {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
