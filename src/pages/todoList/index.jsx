@@ -3,6 +3,7 @@ import './index.css';
 import AddItem from '@/pages/todoList/addItem';
 import List from '@/pages/todoList/list';
 import Dialog from '@/component/dialog';
+import Pagination from '@/pages/todoList/pagination'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as action from './store/action';
@@ -17,6 +18,7 @@ class todoList extends Component {
             <div style={{ overflow: 'hidden' }}>
                 <AddItem />
                 <List />
+                <Pagination />
                 {showDialog ? <Dialog /> : ''}
             </div>
         );

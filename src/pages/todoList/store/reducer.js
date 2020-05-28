@@ -5,12 +5,15 @@ import {
     CHANGE_ITEM,
     ENSURE_CHANGE,
     CANCEL_DIALOG,
+    SELECT_PAGE
 } from './constants';
 
 const initialState = {
     todoList: [],
     showDialog: false,
     activeIndex: 0,
+    page: 0,
+    offset: 10,
 };
 
 export default (state = initialState, action) => {
@@ -19,6 +22,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 todoList: action.todoList,
+            };
+        case SELECT_PAGE:
+            return {
+                ...state,
+                page: action.page,
             };
         case ADD_TO_TODOLIST:
             return {

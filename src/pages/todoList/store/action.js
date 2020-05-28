@@ -6,6 +6,7 @@ import {
     CHANGE_ITEM,
     ENSURE_CHANGE,
     CANCEL_DIALOG,
+    SELECT_PAGE
 } from './constants';
 import store from '@/store';
 
@@ -28,6 +29,23 @@ export const getTodoList = () => {
                 }
             }
         });
+    };
+};
+
+/*分页器选择页数，包括上一页，下一页
+ *@method selectPage
+ *@param {Number}curPage 需要跳转到的页面 {Number}maxPage 总页数
+ *@return {Object} action需要提交的数据
+ */
+export const selectPage = (curPage, maxPage) => {
+    if (curPage < 0) {
+        curPage = 0;
+    } else if (curPage > maxPage) {
+        curPage = maxPage;
+    }
+    return {
+        type: SELECT_PAGE,
+        page: curPage,
     };
 };
 

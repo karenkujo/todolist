@@ -6,20 +6,25 @@ import * as action from '@/pages/todoList/store/action';
 
 class List extends Component {
     render() {
-        const { todoList, deleteItem, changeItem } = this.props;
+        const { todoList, page, offset, deleteItem, changeItem } = this.props;
+        const list = todoList.slice(page * offset, (page + 1) * offset);
         return (
             <div className="list">
-                {todoList.map((item, index) => (
-                    <div className="list-item" key={index}>
-                        <div>{item}</div>
-                        <button onClick={changeItem.bind(null, index)}>
-                            修改
-                        </button>
-                        <button onClick={deleteItem.bind(null, index)}>
-                            删除
-                        </button>
-                    </div>
-                ))}
+                {list.length ? (
+                    list.map((item, index) => (
+                        <div className="list-item" key={index}>
+                            <div>{item}</div>
+                            <button onClick={changeItem.bind(null, (page * offset + index))}>
+                                修改
+                            </button>
+                            <button onClick={deleteItem.bind(null, (page * offset + index))}>
+                                删除
+                            </button>
+                        </div>
+                    ))
+                ) : (
+                    <div>没有列表数据</div>
+                )}
             </div>
         );
     }
@@ -27,6 +32,8 @@ class List extends Component {
 
 const mapState = (state) => ({
     todoList: state.todoListReducer.todoList,
+    page: state.todoListReducer.page,
+    offset: state.todoListReducer.offset,
 });
 const mapDispatch = (dispatch) => {
     return bindActionCreators(action, dispatch);
