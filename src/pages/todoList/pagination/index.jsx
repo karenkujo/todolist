@@ -6,9 +6,7 @@ import * as action from '@/pages/todoList/store/action';
 
 class Pagination extends Component {
     render() {
-        const {selectPage, page, todoList, offset } = this.props;
-        const maxPage = Math.floor(todoList.length / offset);
-        const paginationList = new Array(maxPage + 1).fill(1).map((item, index) => index + 1);
+        const { selectPage, page, maxPage, paginationList } = this.props;
         return (
             <div className="pageination-wrapper">
                 <button onClick={selectPage.bind(null, page - 1, maxPage)}>
@@ -35,9 +33,9 @@ class Pagination extends Component {
 }
 
 const mapState = (state) => ({
-    todoList: state.todoListReducer.todoList,
     page: state.todoListReducer.page,
-    offset: state.todoListReducer.offset,
+    maxPage: state.todoListReducer.maxPage,
+    paginationList: state.todoListReducer.paginationList,
 });
 const mapDispatch = (dispatch) => {
     return bindActionCreators(action, dispatch);
